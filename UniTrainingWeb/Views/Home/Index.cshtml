@@ -1,9 +1,305 @@
 ﻿@{
-    ViewData["Title"] = "Home Page Test 2";
+    ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@*     <link rel="stylesheet" href="~/css/StyleSheet.css">
+ *@    <title>Document</title>
+ <style>
+
+    
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #7c99f2;
+}
+
+button {
+    border: 0;
+    padding: 0;
+    font-family: inherit;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 64px;
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Poppins';
+}
+
+.navbar-overlay {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+body.open .navbar-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navbar-burger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+}
+
+.navbar-title {
+    margin: 0;
+    font-size: 16px;
+}
+
+.box {
+    width: 272px;
+    height: 58px;
+}
+
+    .box .group {
+        position: fixed;
+        width: 275px;
+        top: 7px;
+        height: 58px;
+        left: auto;
+    }
+
+    .box .overlap {
+        width: 270px;
+        position: relative;
+        height: 59px;
+        top: -1px;
+    }
+
+    .box .text-wrapper {
+        position: absolute;
+        top: auto;
+        left: 83px;
+        -webkit-text-stroke: 1.3px #000000;
+        font-family: "Inter-SemiBold", Helvetica;
+        font-weight: 550;
+        color: #027eff;
+        font-size: 48px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .box .overlap-group-wrapper {
+        position: absolute;
+        width: 86px;
+        top: 1px;
+        height: 58px;
+        left: auto;
+    }
+
+    .box .overlap-group {
+        width: 85px;
+        left: -1px;
+        position: relative;
+        height: 59px;
+        top: -1px;
+    }
+
+    .box .rectangle {
+        position: absolute;
+        width: 83px;
+        height: 52px;
+        top: 0px;
+        left: 0px;
+        background-color: #027eff;
+        border-radius: 10px;
+    }
+
+    .box .div {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        -webkit-text-stroke: 1.3px #000000;
+        font-family: "Inter-SemiBold", Helvetica;
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 48px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+.navbar-menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    translate: -100% 0;
+    width: 270px;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #d1d1d1;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+body.open .navbar-menu {
+    translate: 0 0;
+    visibility: visible;
+}
+
+.navbar-menu button {
+    font-size: 18px;
+    font: bold;
+    letter-spacing: 1px;
+    background: #ffffff;
+    color: #008CBA;
+    padding-inline: 25px;
+    border: 2.5px solid #008CBA;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+    .navbar-menu button:hover {
+        background: #008CBA;
+        color: #ffffff;
+    }
+
+.navbar-menu > button {
+    background: #ffffff;
+    color: rgba(255, 255, 255, 0.5);
+    background: transparent;
+    padding: 0 8px;
+    transition: all 0.3s;
+}
+
+.navbar-menu > button {
+    color: inherit;
+}
+
+    .navbar-menu > button:hover {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+
+
+    .navbar-overlay {
+        display: none;
+    }
+
+    .navbar-burger {
+        display: none;
+    }
+
+    .navbar-menu {
+        position: static;
+        translate: 0 0;
+        width: auto;
+        background: transparent;
+        flex-direction: row;
+        visibility: visible;
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    text-align: center;
+}
+
+.box1 {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+    .box1 h2 {
+        color: #333;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .box1 p {
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+
+
+ </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">
+            <div class="navbar-title">
+                <div class="box">
+                    <div class="group">
+                        <div class="overlap">
+                            <div class="text-wrapper">Training</div>
+                            <div class="overlap-group-wrapper">
+                                <div class="overlap-group">
+                                    <div class="rectangle"></div>
+                                    <div class="div">UNI</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </nav>
+
+    <div class="container">
+        <h1 class="label">User Login</h1>
+
+        <form class="login_form" action="index.html" method="post" name="form" onsubmit="return validated()">
+
+            <input autocomplete="off" type="text" name="userid" placeholder="User ID">
+            <div id="user_error">Please fill up your ID.Number</div>
+
+            <input type="password" name="password" placeholder="Password">
+            <div id="pass_error">Please fill up your Password</div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
+
 
